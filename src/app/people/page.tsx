@@ -2,6 +2,7 @@ import { getPeople } from '@/lib/swapi';
 import Pagination from '@/components/Pagination';
 import Search from '@/components/Search';
 import Link from 'next/link';
+import { Person } from '@/interfaces/Person';
 
 export default async function Page({
   searchParams: searchParamsPromise,
@@ -21,7 +22,7 @@ export default async function Page({
       <h1 className="text-3xl font-bold mb-4">Персонажи</h1>
       <Search placeholder="Поиск персонажей..." />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {results.map(person => (
+        {results.map((person: Person) => (
           <div key={person.name} className="card bg-base-200 shadow-xl">
             <div className="card-body">
               <h2 className="card-title">{person.name}</h2>
