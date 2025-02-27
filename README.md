@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Star Wars Explorer
 
-## Getting Started
+Добро пожаловать в **Star Wars Explorer** – интерактивное приложение для просмотра информации о персонажах и планетах вселенной "Звёздных войн". Проект использует публичное API [SWAPI](https://swapi.dev/) и построен с использованием [Next.js](https://nextjs.org/).
 
-First, run the development server:
+## О проекте
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**Star Wars Explorer** позволяет:
+- Просматривать список персонажей и планет с подробной информацией.
+- Искать по именам через строку поиска.
+- Переходить между страницами с фиксированным количеством элементов (9 на страницу).
+- Получать детальную информацию о выбранном персонаже или планете.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Технологии
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Проект реализован с использованием:
+- **Next.js (App Router)** – для создания маршрутов и серверного рендеринга.
+- **React** – для построения пользовательских интерфейсов.
+- **Axios** – для выполнения HTTP-запросов к SWAPI.
+- **Tailwind CSS (или альтернативная библиотека)** – для оформления интерфейса.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Установка и запуск
 
-## Learn More
+1. **Установите зависимости:**
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **Запустите проект в режиме разработки:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```bash
+   npm run dev
+   ```
 
-## Deploy on Vercel
+   Приложение будет доступно по адресу [http://localhost:3000](http://localhost:3000).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Пагинация
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+В приложении реализована пагинация:
+- На страницах персонажей и планет выводится ровно 9 элементов.
+
+
+Пример логики пагинации можно найти в файлах:
+- `src/app/people/page.tsx`
+- `src/app/planets/page.tsx`
+
+## Особенности
+
+- **Серверное получение данных:** Все запросы к API выполняются на серверной стороне, что улучшает SEO и время загрузки страницы.
+- **Асинхронная обработка параметров маршрутов:** В новых маршрутах Next.js параметры (например, `searchParams` и `params`) обрабатываются асинхронно, что помогает избежать ошибок синхронного доступа к данным.
+
+## Вклад в проект
+
+Если у вас есть идеи по улучшению проекта или вы хотите добавить новый функционал, пожалуйста, создайте [issue](https://github.com/your-username/starwars-explorer/issues) или отправьте pull request.
+
+
+
+Наслаждайтесь погружением в мир "Звёздных войн"!
