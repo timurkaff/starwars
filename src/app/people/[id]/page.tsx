@@ -7,7 +7,7 @@ export default async function PersonPage({
   params: Promise<{ id: string }>;
 }) {
   const params = await paramsPromise;
-  const person = await getPerson(params.id);
+  const person = await getPerson({ id: params.id });
 
   return (
     <div className="container mx-auto p-4 flex flex-col gap-5">

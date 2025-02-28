@@ -2,12 +2,12 @@
 
 import { useRouter } from 'next/navigation';
 
-export default function Search({ placeholder }) {
+export default function Search({ placeholder }: { placeholder: string }) {
   const router = useRouter();
 
-  const handleSearch = (e) => {
+  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const search = e.target.search.value;
+    const search = e.currentTarget.search.value;
     router.push(`?search=${search}`);
   };
 

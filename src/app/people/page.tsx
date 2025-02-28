@@ -9,13 +9,12 @@ export default async function Page({
 }: {
   searchParams: Promise<{ page?: string; search?: string }>;
 }) {
-  // Дожидаемся полной загрузки параметров запроса
   const searchParams = await searchParamsPromise;
 
   const page = Number(searchParams?.page) || 1;
   const search = searchParams?.search || '';
   
-  const { results, count } = await getPeople(page, search);
+  const { results, count } = await getPeople({ page, search });
 
   return (
     <div className="container mx-auto p-4">

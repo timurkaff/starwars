@@ -7,7 +7,7 @@ export default async function PlanetPage({
   params: Promise<{ id: string }>;
 }) {
   const params = await paramsPromise;
-  const planet = await getPlanet(params.id);
+  const planet = await getPlanet({id: params.id});
 
   return (
     <div className="container mx-auto p-4 flex flex-col gap-5">
